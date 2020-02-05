@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<body>
+		<label for="lumpSumMonth">Lump Sum Month</label>
+		<input type="number" min="1" max="12" name="lumpSumMonth" id="LSMonth" />
+		<br />
+		<label for="lumpSumAmount">Lump Sum Amount</label>
+		<input
+			type="number"
+			min="0"
+			max="30000"
+			name="lumpSumAmount"
+			id="LSAmount"
+		/>
+		<br />
+		<label for="debitOrderMonth">Debit Order Month</label>
+		<input type="number" min="1" max="12" name="debitOrderMonth" id="DOMonth" />
+		<br />
+		<label for="debitOrderAmount">Debit Order Amount</label>
+		<input
+			type="number"
+			min="0"
+			max="2500"
+			name="debitOrderAmount"
+			id="DOAmount"
+		/>
+		<br />
+		<button
+			onclick="paymentValidator(
+                parseInt(document.getElementById('LSMonth').value, 10),
+                parseFloat(document.getElementById('LSAmount').value),
+                parseInt(document.getElementById('DOMonth').value, 10),
+                parseFloat(document.getElementById('DOAmount').value))"
+		>
+			Calculate
+		</button>
+		<h4>Am I valid?</h4>
+		<p id="validity"></p>
+		<h4>Total Paid?</h4>
+		<p id="total"></p>
+		<h4>Earliest debit order month?</h4>
+		<p id="debitMonth"></p>
+		<script src="./index.js"></script>
+	</body>
+</html>
